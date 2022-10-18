@@ -1,0 +1,18 @@
+{
+  "name": "code-interview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-server": "PORT=3000 node app.js",
+    "start-dashboard": "http-server public -p 3001"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.13"
+  }
+}
