@@ -1,19 +1,26 @@
-const express = require('express');
-const mongoose = require('mongoose');
+const express = require("express");
+const mongoose = require("mongoose");
 
-mongoose.connect('mongodb://localhost:27017/codeTest', {
-	autoReconnect: true,
-	reconnectTries: 60,
-	reconnectInterval: 10000
-});
+mongoose.connect(
+  "mongodb://localhost:27017/codeTest",
+  {
+    autoReconnect: true,
+    reconnectTries: 60,
+    reconnectInterval: 10000,
+  },
+  () => {
+    console.log("connected to database");
+  }
+);
 
 const port = process.env.PORT || 3000;
 const app = express();
 app.listen(port);
 
-app.use(require('body-parser').json());
+app.use(require("body-parser").json());
 
-app.use('/account/create', require('./api/account/create'));
+app.use("/account/create", require("./api/account/create"));
+app.use("/conversion/create", require("./api/conversion/createConversion"));
 
 console.log(`app running on port ${port}`);
 
